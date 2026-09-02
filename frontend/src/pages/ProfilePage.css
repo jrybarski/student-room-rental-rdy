@@ -1,0 +1,267 @@
+.profile-page {
+  min-height: calc(100vh - 70px);
+  background: #f8f9fa;
+  padding: 40px 20px;
+}
+
+.profile-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Nagłówek profilu */
+.profile-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-avatar {
+  flex-shrink: 0;
+}
+
+.profile-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #667eea;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info h1 {
+  color: white;
+  font-size: 32px;
+  margin: 0 0 15px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.profile-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profile-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  backdrop-filter: blur(5px);
+}
+
+.profile-badge.empty {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+/* Sekcje */
+.profile-section {
+  padding: 30px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-section:last-of-type {
+  border-bottom: none;
+}
+
+.profile-section h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+/* Oceny */
+.ratings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rating-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.rating-label {
+  font-size: 16px;
+  color: #555;
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rating-stars .star {
+  font-size: 20px;
+  color: #ddd;
+}
+
+.rating-stars .star.filled {
+  color: #f1c40f;
+}
+
+.rating-value {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+.ratings-count {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.no-ratings {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+/* Bio */
+.bio-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  white-space: pre-wrap;
+}
+
+/* Akcje */
+.profile-actions {
+  padding: 20px 40px 30px;
+}
+
+.back-btn {
+  background: #f8f9fa;
+  color: #333;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: #e9ecef;
+}
+
+/* Ładowanie i błędy */
+.loading {
+  text-align: center;
+  padding: 60px;
+  font-size: 18px;
+  color: #888;
+}
+
+.error-container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.error-container h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.error-container p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.error-container button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.error-container button:hover {
+  background: #5a6fd6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .profile-info h1 {
+    font-size: 26px;
+  }
+
+  .profile-badges {
+    justify-content: center;
+  }
+
+  .profile-section {
+    padding: 20px;
+  }
+
+  .rating-item {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .avatar-placeholder,
+  .profile-avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatar-placeholder {
+    font-size: 40px;
+  }
+}
+
+.profile-username {
+  font-size: 17px;
+  color: #667eea;
+  font-weight: 600;
+  margin: 4px 0 14px;
+  letter-spacing: 0.3px;
+}

@@ -1,0 +1,246 @@
+.login-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f5f5f5;
+}
+
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-container h1 {
+  text-align: center;
+  margin: 0 0 30px 0;
+  color: #333;
+  font-size: 28px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eee;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #999;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tabs button.active {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e74c3c;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.role-selection {
+  display: flex;
+  gap: 15px;
+}
+
+.role-option {
+  flex: 1;
+  cursor: pointer;
+}
+
+.role-option input {
+  display: none;
+}
+
+.role-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 15px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.role-option.selected .role-content {
+  border-color: #e74c3c;
+  background: #fef5f4;
+}
+
+.role-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.role-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.role-desc {
+  font-size: 12px;
+  color: #999;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #c0392b;
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.message.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.message.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.form-row.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: white;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Username field */
+.label-hint {
+  font-size: 12px;
+  color: #999;
+  font-weight: 400;
+}
+
+.username-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.username-input-wrapper:focus-within {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
+}
+
+.username-prefix {
+  padding: 12px 10px 12px 14px;
+  background: #f8f9fa;
+  color: #667eea;
+  font-weight: 700;
+  font-size: 16px;
+  border-right: 1px solid #ddd;
+}
+
+.username-input-wrapper input {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  flex: 1;
+}
+
+.field-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* ProfilePage username */
+.profile-username {
+  font-size: 16px;
+  color: #667eea;
+  font-weight: 600;
+  margin: 4px 0 12px;
+}

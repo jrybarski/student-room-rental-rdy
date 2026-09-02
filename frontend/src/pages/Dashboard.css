@@ -1,0 +1,1247 @@
+.dashboard {
+  min-height: calc(100vh - 70px);
+  background: #f5f6fa;
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+/* ============ SIDEBAR ============ */
+.dashboard-sidebar {
+  width: 280px;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 25px 20px;
+  border-bottom: 1px solid #eee;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.user-avatar-small {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.user-avatar-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info-small h3 {
+  margin: 0;
+  color: white;
+  font-size: 16px;
+}
+
+.user-role {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+.sidebar-nav {
+  padding: 15px 0;
+}
+
+.nav-section {
+  margin-bottom: 5px;
+}
+
+.nav-section-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.nav-section-header:hover {
+  background: #f5f6fa;
+}
+
+.nav-section-header.open {
+  background: #f0f0f5;
+}
+
+.nav-section-header .arrow {
+  font-size: 10px;
+  color: #888;
+}
+
+.nav-section-content {
+  background: #fafafa;
+  border-left: 3px solid #667eea;
+  margin-left: 20px;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background: #eee;
+  color: #333;
+}
+
+.nav-item.active {
+  background: #667eea;
+  color: white;
+}
+
+/* ============ MAIN CONTENT ============ */
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.message-banner {
+  background: #667eea;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.content-section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.content-section h2 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.section-desc {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+/* ============ EMPTY STATE ============ */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.cta-btn:hover {
+  background: #5a6fd6;
+}
+
+/* ============ REQUESTS LIST ============ */
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.request-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.request-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.request-info p {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status-badge.status-pending { background: #fff3cd; color: #856404; }
+.status-badge.status-accepted { background: #d4edda; color: #155724; }
+.status-badge.status-rejected { background: #f8d7da; color: #721c24; }
+.status-badge.available { background: #d4edda; color: #155724; }
+.status-badge.rented { background: #cce5ff; color: #004085; }
+
+/* ============ ROOMMATES GRID ============ */
+.roommates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.roommate-card-new {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.roommate-card-new:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.roommate-avatar-link {
+  flex-shrink: 0;
+}
+
+.roommate-avatar-link img,
+.roommate-avatar-link .avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  background: #667eea;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.roommate-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.roommate-name {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.roommate-name:hover {
+  color: #667eea;
+}
+
+.roommate-apartment {
+  margin: 0;
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rate-btn-new {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.rate-btn-new:hover {
+  background: #5a6fd6;
+}
+
+.rated-badge {
+  background: #d4edda;
+  color: #155724;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* ============ PROFILE EDIT ============ */
+.profile-edit-form {
+  max-width: 600px;
+}
+
+.avatar-edit {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.current-avatar img,
+.avatar-placeholder-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder-large {
+  background: #667eea;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.upload-btn {
+  background: #f0f0f5;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.upload-btn:hover {
+  background: #e0e0e5;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.save-profile-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.2s;
+}
+
+.save-profile-btn:hover {
+  background: #5a6fd6;
+}
+
+/* ============ OWNER SECTIONS ============ */
+.add-room-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.add-room-btn:hover {
+  background: #219a52;
+}
+
+.add-room-form {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.submit-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.submit-btn:hover {
+  background: #5a6fd6;
+}
+
+.rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.room-card-owner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.room-thumb {
+  width: 100px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.room-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-image {
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 12px;
+}
+
+.room-info {
+  flex: 1;
+}
+
+.room-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.room-info p {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.room-meta {
+  margin-top: 5px !important;
+}
+
+.room-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* ============ PENDING REQUESTS ============ */
+.pending-requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pending-request-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.request-student {
+  flex: 1;
+}
+
+.request-student strong {
+  display: block;
+  font-size: 16px;
+}
+
+.request-student span {
+  font-size: 13px;
+  color: #888;
+}
+
+.request-apartment {
+  flex: 1;
+}
+
+.request-apartment strong {
+  display: block;
+}
+
+.request-apartment span {
+  font-size: 13px;
+  color: #888;
+}
+
+.request-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.accept-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.accept-btn:hover {
+  background: #219a52;
+}
+
+.reject-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reject-btn:hover {
+  background: #c0392b;
+}
+
+/* ============ RATING MODAL ============ */
+.rating-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.rating-modal {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.rating-modal h3 {
+  margin: 0 0 5px 0;
+  font-size: 22px;
+}
+
+.rating-apartment {
+  color: #888;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.rating-warning {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.rating-category {
+  margin-bottom: 20px;
+}
+
+.rating-category label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.stars {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  font-size: 32px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.1s;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+.star.active {
+  color: #f1c40f;
+}
+
+.rating-comment {
+  margin-bottom: 20px;
+}
+
+.rating-comment label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.rating-comment textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.rating-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.submit-rating-btn {
+  flex: 1;
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.submit-rating-btn:hover {
+  background: #219a52;
+}
+
+.cancel-btn {
+  flex: 1;
+  background: #f0f0f5;
+  color: #333;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.cancel-btn:hover {
+  background: #e0e0e5;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .nav-section {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .nav-section-header {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .form-row-2,
+  .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .pending-request-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .request-actions {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .request-actions button {
+    flex: 1;
+  }
+}
+
+/* ============ FAVORITES ============ */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.favorite-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.favorite-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.favorite-image {
+  height: 150px;
+  overflow: hidden;
+}
+
+.favorite-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.favorite-info {
+  padding: 15px;
+}
+
+.favorite-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.favorite-location {
+  margin: 0 0 5px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.favorite-price {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.remove-favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+.remove-favorite-btn:hover {
+  transform: scale(1.1);
+  background: #fee;
+}
+
+
+/* ============ MOJE MIESZKANIE ============ */
+
+.resident-dot {
+  width: 8px;
+  height: 8px;
+  background: #2ecc71;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+.resident-info-banner {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Karta mieszkania */
+.my-apartment-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 14px;
+  padding: 24px 28px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.apartment-card-info h3 {
+  font-size: 20px;
+  margin: 0 0 8px 0;
+}
+
+.apartment-card-location {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0 0 12px 0;
+}
+
+.apartment-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.apartment-card-meta span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  backdrop-filter: blur(4px);
+}
+
+.leave-apartment-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.leave-apartment-btn:hover {
+  background: rgba(231, 76, 60, 0.5);
+  border-color: rgba(231, 76, 60, 0.6);
+}
+
+/* Potwierdzenie opuszczenia */
+.leave-confirm-box {
+  background: #fff3f3;
+  border: 1.5px solid #f5c6cb;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.leave-confirm-box p {
+  margin: 0 0 14px 0;
+  color: #721c24;
+  font-size: 14px;
+}
+
+.leave-confirm-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.leave-confirm-yes {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.leave-confirm-yes:hover:not(:disabled) { opacity: 0.85; }
+.leave-confirm-yes:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.leave-confirm-no {
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.leave-confirm-no:hover { background: #e9ecef; }
+
+/* Sekcja współlokatorów */
+.roommates-section {
+  margin-top: 8px;
+}
+
+.roommates-section h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 18px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.roommates-count {
+  background: #667eea;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.no-roommates {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  color: #888;
+}
+
+/* Kafelki współlokatorów */
+.roommates-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.roommate-tile {
+  background: white;
+  border: 1.5px solid #eee;
+  border-radius: 14px;
+  padding: 20px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.roommate-tile:hover {
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+}
+
+.roommate-tile-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.roommate-tile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.roommate-tile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.roommate-tile-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.roommate-tile-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.roommate-tile-link:hover .roommate-tile-name {
+  color: #667eea;
+}
+
+.roommate-rate-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  width: 100%;
+}
+
+.roommate-rate-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.roommate-rated-badge {
+  background: #d4edda;
+  color: #155724;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* RoomDetails - blokada wniosku */
+.applied-badge.blocked {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffc107;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.applied-badge.blocked a {
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* Zmiana hasła */
+.change-password-card {
+  background: #f8f9fa;
+  border-radius: 14px;
+  padding: 30px;
+  max-width: 500px;
+}
+
+.change-password-form .form-group { margin-bottom: 20px; }
+.change-password-form .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; font-size: 14px; }
+
+.password-input-wrapper { position: relative; }
+
+.password-input-wrapper input {
+  width: 100%;
+  padding: 13px 46px 13px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  background: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.password-input-wrapper input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0;
+  line-height: 1;
+}
+
+.password-strength-bar { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.strength-track { flex: 1; height: 5px; background: #e0e0e0; border-radius: 10px; overflow: hidden; }
+.strength-fill { height: 100%; border-radius: 10px; transition: width 0.3s ease, background 0.3s ease; }
+.strength-label { font-size: 12px; font-weight: 600; min-width: 65px; text-align: right; }
+
+.password-match-hint { margin-top: 8px; font-size: 13px; font-weight: 500; }
+.password-match-hint.match { color: #2ecc71; }
+.password-match-hint.no-match { color: #e74c3c; }
+
+.password-divider { height: 1px; background: #e8e8e8; margin: 4px 0 20px; }
+
+.password-alert { padding: 13px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; margin-bottom: 22px; }
+.password-alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.password-alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* Responsive kafelki */
+@media (max-width: 600px) {
+  .roommates-tiles { grid-template-columns: repeat(2, 1fr); }
+  .my-apartment-card { flex-direction: column; }
+  .leave-apartment-btn { width: 100%; text-align: center; }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "student-room-rental",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.8.3",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.2"
+  }
+}
